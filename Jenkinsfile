@@ -26,7 +26,7 @@ pipeline{
         stage("mvn package"){
             steps{
                 gwithMaven(globalMavenSettingsConfig: '', jdk: 'JAVA_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
-                    withSonarQubeEnv(credentialsId: 'sonarqube') {
+                    withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'sonarqube') {
                       sh 'mvn package sonarqube:sonarqube'
                    }
                 }
