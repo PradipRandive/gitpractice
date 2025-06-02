@@ -2,7 +2,7 @@ pipeline{
     agent any 
     stages{
         stage('SCM checkout'){
-            step{
+            steps{
                git 'https://github.com/PradipRandive/maven-project.git' 
             }
         }
