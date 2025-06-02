@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("SCM checkout"){
             step{
-               git 'https://github.com/PradipRandive/maven-project.git' 
+               git branch: 'main' git 'https://github.com/PradipRandive/maven-project.git' 
             }
         }
     }
