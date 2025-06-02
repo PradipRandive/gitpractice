@@ -1,9 +1,9 @@
 pipeline{
     agent any 
     stages{
-        stage("SCM checkout"){
+        stage('SCM checkout'){
             step{
-               git branch: 'main' git 'https://github.com/PradipRandive/maven-project.git' 
+               git 'https://github.com/PradipRandive/maven-project.git' 
             }
         }
     }
