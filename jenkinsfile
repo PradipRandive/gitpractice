@@ -6,5 +6,26 @@ pipeline{
                git 'https://github.com/PradipRandive/maven-project.git' 
             }
         }
+        stage('mvn validate'){
+            steps{
+               withMaven(globalMavenSettingsConfig: '', jdk: 'JAVA_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
+                 sh 'mvn validate'
+                } 
+            }
+        }
+        stage('mvn compile'){
+            steps{
+               withMaven(globalMavenSettingsConfig: '', jdk: 'JAVA_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
+                 sh 'mvn compile'
+                } 
+            }
+        }
+        stage('mvn build'){
+            steps{
+               withMaven(globalMavenSettingsConfig: '', jdk: 'JAVA_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
+                 sh 'mvn build'
+                } 
+            }
+        }
     }
 }
